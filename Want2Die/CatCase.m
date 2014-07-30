@@ -7,28 +7,37 @@
 //
 
 #import "CatCase.h"
-
+#import "NSObject+Expansion.h"
 @implementation CatCase
 @synthesize catSexState;
 @synthesize currentDirectionState;
--(id)init
-{
-    self = [super init];
+
+
+- (id)initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
     if (self) {
-       
-        catView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"cat"]];
-        catView.frame = self.frame;
-        [self addSubview:catView];
-         currentDirectionState = [self catDefaultDirection];
+        currentDirectionState = [self catDefaultDirection];
         catSexState = [self catSexState];
+        if (catSexState == CatSexStateMale) {
+            catView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"maleCat"]];
+        }else
+        {
+            catView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"femaleCat"]];
+        }
+        
+        CGRect rect = self.frame;
+        catView.frame = CGRectMake(rect.size.width/2-10, rect.size.height/2-10, 20, 20);
+        [self addSubview:catView];
+        [self addGestureRecognizer];
     }
     return self;
 }
+
 //返回随机方向
 -(DirectionState)catDefaultDirection
 {
-    
-    switch (rand()%4) {
+
+    switch ([NSObject getRandomNumber]%4) {
         case 0:
             currentDirectionState = DirectionStateUP;
             break;
@@ -50,7 +59,9 @@
 //返回随机性别
 -(CatSexState)catSexState
 {
-    switch (rand()%2) {
+
+    int sexState = [NSObject getRandomNumber]%2;
+    switch (sexState) {
         case 0:
             catSexState = CatSexStateMale;
             break;
@@ -62,20 +73,42 @@
     }
       return catSexState;
 }
--(void)catMoveUp
-{
 
+//给猫添加手势
+-(void)addGestureRecognizer
+{
+    UISwipeGestureRecognizer *recognizer;
+    recognizer = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(handleSwipeFrom:)];
+    [recognizer setDirection:(UISwipeGestureRecognizerDirectionRight)];
+    [self addGestureRecognizer:recognizer];
+    
+    recognizer = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(handleSwipeFrom:)];
+    [recognizer setDirection:(UISwipeGestureRecognizerDirectionLeft)];
+    [self addGestureRecognizer:recognizer];
+
+    recognizer = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(handleSwipeFrom:)];
+    [recognizer setDirection:(UISwipeGestureRecognizerDirectionUp)];
+    [self addGestureRecognizer:recognizer];
+
+    recognizer = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(handleSwipeFrom:)];
+    [recognizer setDirection:(UISwipeGestureRecognizerDirectionDown)];
+    [self addGestureRecognizer:recognizer];
 }
--(void)catMoveDown
+-(void)handleSwipeFrom:(UISwipeGestureRecognizer *)recognizer
 {
-
-}
--(void)catMoveLeft
-{
-
-}
--(void)catMoveRight
-{
-
+    if(recognizer.direction==UISwipeGestureRecognizerDirectionUp)
+    {
+        self.currentDirectionState = DirectionStateUP;
+    }else if(recognizer.direction==UISwipeGestureRecognizerDirectionDown)
+    {
+        self.currentDirectionState = DirectionStateDown;
+    }else if(recognizer.direction==UISwipeGestureRecognizerDirectionLeft)
+    {
+        self.currentDirectionState = DirectionStateLeft;
+    }
+    else if(recognizer.direction==UISwipeGestureRecognizerDirectionRight)
+    {
+        self.currentDirectionState = DirectionStateRight;
+    }
 }
 @end

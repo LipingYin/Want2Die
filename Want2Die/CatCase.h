@@ -20,11 +20,7 @@ typedef NS_ENUM(NSInteger, CatSexState)
     CatSexStateMale=0,
     CatSexStateFemale
 };
-typedef struct Cat
-{
-    NSInteger x;
-    NSInteger y;
-}__cat;
+
 @interface CatCase : UIView
 {
     UIImageView *catView;
@@ -33,10 +29,7 @@ typedef struct Cat
 }
 @property (nonatomic)DirectionState currentDirectionState;
 @property (nonatomic) CatSexState catSexState;
--(void)catMoveUp;
--(void)catMoveDown;
--(void)catMoveLeft;
--(void)catMoveRight;
+
 -(DirectionState)catDefaultDirection;
 -(CatSexState)catSexState;
 @end

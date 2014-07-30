@@ -8,18 +8,20 @@
 
 #import "GameViewController.h"
 #import "CatCase.h"
+#import "NSObject+Expansion.h"
 #define WIDTH 20
 #define MOVE_LEN 5
 
 @interface GameViewController ()
 {
-    UIView * baseView;
+
     UIButton * beginButton;
-    CatCase *cat;
-    NSTimer * timer;
+//    CatCase *cat;
+
+    NSTimer *timer;
+    NSTimer *addCatTimer;
     NSMutableArray *catArray;
     
-
 }
 @end
 
@@ -46,7 +48,6 @@
 
     [self launchView];
 }
-#pragma mark - UI
 //开始
 -(void)launchView
 {
@@ -55,14 +56,36 @@
     [beginButton setTitle:@"开始" forState:UIControlStateNormal];
     [beginButton addTarget:self action:@selector(beginButtonClick:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:beginButton];
-    
+    [self addCat];
+    [self addCat];
+}
+-(void)addCat
+{
+    //一定范围内的随机位置
+    CGPoint catPoint = [self catDefaltLocation];
     //初始猫
-    cat = [[CatCase alloc]init];
-    cat.frame = CGRectMake(100, 250, 20, 20);
+    CatCase *cat = [[CatCase alloc]initWithFrame:CGRectMake(catPoint.x, catPoint.y, 100, 100)];
+    cat.userInteractionEnabled = YES;
     
     [self.view addSubview:cat];
+    [catArray addObject:cat];
+    
+}
 
-
+//一定范围内的随机位置
+-(CGPoint)catDefaltLocation
+{
+    //m + rand()%(n-m)
+    CGPoint center = self.view.center;
+    int minX = center.x-40;
+    int maxX = center.x+40;
+    int minY = center.y-40;
+    int maxY = center.y+40;
+    int catX = minX + [NSObject getRandomNumber]%(maxX-minX);
+    int catY = minY + [NSObject getRandomNumber]%(maxY-minY);
+    
+    CGPoint catPoint= CGPointMake(catX, catY);
+    return catPoint;
 }
 //开始按钮点击
 - (void)beginButtonClick:(id)sender {
@@ -71,79 +94,86 @@
     beginButton.hidden = YES;
     beginButton.enabled = NO;
     if (!isPlaying) {
-        timer = [NSTimer scheduledTimerWithTimeInterval:0.07 target:self selector:@selector(catMove) userInfo:nil repeats:YES];
+        timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(catMove) userInfo:nil repeats:YES];
+        addCatTimer = [NSTimer scheduledTimerWithTimeInterval:10 target:self selector:@selector(addCat) userInfo:nil repeats:YES];
+
     }
-    else{
-            if ([timer isValid]) {
-                [timer invalidate];
-            }
-    }
+ 
     isPlaying = !isPlaying;
 }
 
 //  定时器调用
 -(void)catMove
 {
-    CGPoint orign = cat.center;
-    switch (cat.currentDirectionState) {
-        case DirectionStateUP:
-            cat.center = CGPointMake(orign.x+ MOVE_LEN, orign.y);
-
-            break;
-        case DirectionStateDown:
-            break;
-        case DirectionStateLeft:
+    CatCase *cat;
+    for (NSInteger i=0; i<[catArray count]; i++) {
+        cat = [catArray objectAtIndex:i];
+        CGPoint orign = cat.center;
+        switch (cat.currentDirectionState) {
+            case DirectionStateUP:
+                cat.center = CGPointMake(orign.x, orign.y-MOVE_LEN);
+                
+                break;
+            case DirectionStateDown:
+                cat.center = CGPointMake(orign.x, orign.y+MOVE_LEN);
+                break;
+            case DirectionStateLeft:
+                cat.center = CGPointMake(orign.x-MOVE_LEN, orign.y);
+                break;
+            case DirectionStateRight:
+                cat.center = CGPointMake(orign.x+MOVE_LEN, orign.y);
+            default:
+                break;
+        }
+        //判断是否出边界
+        [self isBeyondBorder:orign];
+        [self catMeet];
+    }
     
-            break;
-        case DirectionStateRight:
-          
-        default:
-            break;
+    
+}
+//判断两猫相遇
+-(void)catMeet
+{
+    CatCase *cat1;
+    CatCase *cat2;
+  
+    for (int i = 0; i<[catArray count]; i++) {
+        for (int j = 1; j<[catArray count]; j++) {
+            //判断性别
+            if (cat1.catSexState!=cat2.catSexState) {
+                CGRect rect1 = cat1.frame;
+                CGRect rect2 = cat2.frame;
+                if (rect1.origin.x == rect2.origin.x && rect1.origin.y==rect2.origin.y) {
+                    [catArray removeObject:cat2];
+                }
+            }
+        }
+    }
+}
+//判断是否出边界
+-(void)isBeyondBorder:(CGPoint)point
+{
+    int height = self.view.frame.size.height;
+    if(point.x>320||point.x<0||point.y<(height-300)/2||point.y>(height-300)/2+300)
+    {
+        [self failView];
+    }
+    
+}
+// 失败
+-(void)failView
+{
+    NSLog(@"失败");
+
+    if ([timer isValid]) {
+        [timer invalidate];
+    }
+    
+    if ([addCatTimer isValid]) {
+        [addCatTimer invalidate];
     }
 
-    
-//    for (int i = [tailArray count]-1; i >= 0; i--) {
-//        UIImageView * tail = [tailArray objectAtIndex:i];
-//        if (i == 0) {
-//            tail.center = orign;
-//            
-//        }else{
-//            UIImageView * prevTail = [tailArray objectAtIndex:i-1];
-//            tail.center = CGPointMake(prevTail.center.x, prevTail.center.y);
-//        }
-//    }
-//    
-//    CGRect headRect = CGRectMake(head.frame.origin.x, head.frame.origin.y, head.frame.size.width, head.frame.size.height);
-//    CGRect fruitRect = CGRectMake(fruit.frame.origin.x, fruit.frame.origin.y, fruit.frame.size.width, fruit.frame.size.height);
-//    
-//    if ([self isRectsInteract:headRect other:fruitRect]) {
-//        
-//        [self changeFruitLocation];
-//        [self addTail];
-//    }
-//    else if ([self isSnakeTouchItself]) {
-//        [self reStartGame];
-//    }
-//    
-//    [self isSnakeBeyongdBounce];
-    
-    
-    
 }
-
-
--(NSUInteger)getCurrentTime
-{
-    NSDate * startDate = [[NSDate alloc] init];
-    NSCalendar * chineseCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-    NSUInteger unitFlags = NSHourCalendarUnit | NSMinuteCalendarUnit |
-    NSSecondCalendarUnit | NSDayCalendarUnit  |
-    NSMonthCalendarUnit | NSYearCalendarUnit;
-    
-    NSDateComponents * cps = [chineseCalendar components:unitFlags fromDate:startDate];
-    NSUInteger second = [cps second];
-    return second;
-}
-
 
 @end
