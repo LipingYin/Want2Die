@@ -112,7 +112,6 @@
         switch (cat.currentDirectionState) {
             case DirectionStateUP:
                 cat.center = CGPointMake(orign.x, orign.y-MOVE_LEN);
-                
                 break;
             case DirectionStateDown:
                 cat.center = CGPointMake(orign.x, orign.y+MOVE_LEN);
@@ -139,13 +138,19 @@
     CatCase *cat2;
   
     for (int i = 0; i<[catArray count]; i++) {
+      
         for (int j = 1; j<[catArray count]; j++) {
+            cat1 = [catArray objectAtIndex:i];
+            cat2 = [catArray objectAtIndex:j];
             //判断性别
             if (cat1.catSexState!=cat2.catSexState) {
-                CGRect rect1 = cat1.frame;
-                CGRect rect2 = cat2.frame;
-                if (rect1.origin.x == rect2.origin.x && rect1.origin.y==rect2.origin.y) {
+                CGRect rect1 = cat1.catView.frame;
+                CGRect rect2 = cat2.catView.frame;
+                BOOL ismeet = CGRectIntersectsRect(rect1,rect2);
+                 NSLog(@"ifReadOnly value: %@" ,ismeet?@"YES":@"NO");
+                if (ismeet) {
                     [catArray removeObject:cat2];
+                    
                 }
             }
         }
@@ -155,9 +160,11 @@
 -(void)isBeyondBorder:(CGPoint)point
 {
     int height = self.view.frame.size.height;
-    if(point.x>320||point.x<0||point.y<(height-300)/2||point.y>(height-300)/2+300)
+
+    if(point.x>320||point.x<0||point.y<90||point.y>(height-90))
     {
         [self failView];
+        NSLog(@"x:%f  y:%f",point.x,point.y);
     }
     
 }

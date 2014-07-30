@@ -29,6 +29,7 @@ typedef NS_ENUM(NSInteger, CatSexState)
 }
 @property (nonatomic)DirectionState currentDirectionState;
 @property (nonatomic) CatSexState catSexState;
+@property (nonatomic,strong)UIImageView *catView;
 
 -(DirectionState)catDefaultDirection;
 -(CatSexState)catSexState;

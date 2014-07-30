@@ -11,7 +11,7 @@
 @implementation CatCase
 @synthesize catSexState;
 @synthesize currentDirectionState;
-
+@synthesize catView;
 
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
