@@ -8,11 +8,13 @@
 
 #import "AppDelegate.h"
 #import "GameViewController.h"
+#import "YouMiConfig.h"
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    [YouMiConfig launchWithAppID:@"f8fb11ead8879f42" appSecret:@"52f4eccfbebf0e63"];
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.viewController = [[GameViewController alloc] initWithNibName:@"GameViewController" bundle:nil];
     self.window.rootViewController = self.viewController;

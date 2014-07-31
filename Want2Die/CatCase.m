@@ -17,7 +17,9 @@
     self = [super initWithFrame:frame];
     if (self) {
         currentDirectionState = [self randomCatDefaultDirection];
-        catSexState = [self randomCatSexState];
+        //新生猫的状态为kid，5秒钟以后随机男女
+        catSexState = CatSexStateKid;
+        [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(randomCatSexState) userInfo:nil repeats:NO];
         catView = [[UIImageView alloc]init];
         [self setCatImage];
         CGRect rect = self.frame;
@@ -47,7 +49,9 @@
     }else if (catSexState == CatSexStateFemale &&currentDirectionState ==DirectionStateRight) {
         catView.image =  [UIImage imageNamed:@"rightCat_Female"];
     }
-
+    else if (catSexState == CatSexStateKid) {
+        catView.image =  [UIImage imageNamed:@"kidCat"];
+    }
 }
 
 //返回随机方向
@@ -74,7 +78,7 @@
     return currentDirectionState;
 }
 //返回随机性别
--(CatSexState)randomCatSexState
+-(void)randomCatSexState
 {
 
     int sexState = arc4random()%2;
@@ -88,7 +92,7 @@
             
           
     }
-      return catSexState;
+    [self setCatImage];
 }
 
 //给猫添加手势

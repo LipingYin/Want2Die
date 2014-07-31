@@ -11,7 +11,6 @@
 		F0086F0B19889060009E7E18 /* GameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0086F0919889060009E7E18 /* GameViewController.xib */; };
 		F0086F0E19889C95009E7E18 /* CatCase.m in Sources */ = {isa = PBXBuildFile; fileRef = F0086F0D19889C95009E7E18 /* CatCase.m */; };
 		F042C0D619877FE900DAE2E8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F042C0D519877FE900DAE2E8 /* Foundation.framework */; };
-		F042C0D819877FE900DAE2E8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F042C0D719877FE900DAE2E8 /* CoreGraphics.framework */; };
 		F042C0DA19877FE900DAE2E8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F042C0D919877FE900DAE2E8 /* UIKit.framework */; };
 		F042C0E019877FE900DAE2E8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F042C0DE19877FE900DAE2E8 /* InfoPlist.strings */; };
 		F042C0E219877FE900DAE2E8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F042C0E119877FE900DAE2E8 /* main.m */; };
@@ -30,6 +29,15 @@
 		F0A45BA7198A12A800A14569 /* leftCat_Female.png in Resources */ = {isa = PBXBuildFile; fileRef = F0A45BA4198A12A800A14569 /* leftCat_Female.png */; };
 		F0A45BA8198A12A800A14569 /* rightCat_Female.png in Resources */ = {isa = PBXBuildFile; fileRef = F0A45BA5198A12A800A14569 /* rightCat_Female.png */; };
 		F0A45BA9198A12A800A14569 /* upCat_Female.png in Resources */ = {isa = PBXBuildFile; fileRef = F0A45BA6198A12A800A14569 /* upCat_Female.png */; };
+		F0A45BB7198A223E00A14569 /* libOpenIDFA.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A45BB5198A223E00A14569 /* libOpenIDFA.a */; };
+		F0A45BB8198A223E00A14569 /* libYouMi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A45BB6198A223E00A14569 /* libYouMi.a */; };
+		F0A45BBA198A24C900A14569 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A45BB9198A24C900A14569 /* Security.framework */; };
+		F0A45BBE198A24E200A14569 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A45BBD198A24E200A14569 /* CFNetwork.framework */; };
+		F0A45BC0198A24EF00A14569 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A45BBF198A24EF00A14569 /* SystemConfiguration.framework */; };
+		F0A45BC2198A24F700A14569 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A45BC1198A24F700A14569 /* QuartzCore.framework */; };
+		F0A45BC5198A27D100A14569 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A45BC3198A250000A14569 /* libsqlite3.dylib */; };
+		F0A45BC6198A27ED00A14569 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A45BBB198A24D000A14569 /* StoreKit.framework */; };
+		F0A45BC8198A2A2D00A14569 /* kidCat.png in Resources */ = {isa = PBXBuildFile; fileRef = F0A45BC7198A2A2D00A14569 /* kidCat.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +80,24 @@
 		F0A45BA4198A12A800A14569 /* leftCat_Female.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leftCat_Female.png; sourceTree = "<group>"; };
 		F0A45BA5198A12A800A14569 /* rightCat_Female.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rightCat_Female.png; sourceTree = "<group>"; };
 		F0A45BA6198A12A800A14569 /* upCat_Female.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = upCat_Female.png; sourceTree = "<group>"; };
+		F0A45BAC198A223E00A14569 /* YouMiConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouMiConfig.h; sourceTree = "<group>"; };
+		F0A45BAD198A223E00A14569 /* YouMiDelegateProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouMiDelegateProtocol.h; sourceTree = "<group>"; };
+		F0A45BAE198A223E00A14569 /* YouMiPointsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouMiPointsManager.h; sourceTree = "<group>"; };
+		F0A45BAF198A223E00A14569 /* YouMiSpots.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouMiSpots.h; sourceTree = "<group>"; };
+		F0A45BB0198A223E00A14569 /* YouMiView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouMiView.h; sourceTree = "<group>"; };
+		F0A45BB1198A223E00A14569 /* YouMiWall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouMiWall.h; sourceTree = "<group>"; };
+		F0A45BB2198A223E00A14569 /* YouMiWallAppModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouMiWallAppModel.h; sourceTree = "<group>"; };
+		F0A45BB3198A223E00A14569 /* YouMiWallSpot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouMiWallSpot.h; sourceTree = "<group>"; };
+		F0A45BB4198A223E00A14569 /* YouMiWallSpotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouMiWallSpotView.h; sourceTree = "<group>"; };
+		F0A45BB5198A223E00A14569 /* libOpenIDFA.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libOpenIDFA.a; sourceTree = "<group>"; };
+		F0A45BB6198A223E00A14569 /* libYouMi.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libYouMi.a; sourceTree = "<group>"; };
+		F0A45BB9198A24C900A14569 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		F0A45BBB198A24D000A14569 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		F0A45BBD198A24E200A14569 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		F0A45BBF198A24EF00A14569 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		F0A45BC1198A24F700A14569 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		F0A45BC3198A250000A14569 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		F0A45BC7198A2A2D00A14569 /* kidCat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kidCat.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +105,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F042C0D819877FE900DAE2E8 /* CoreGraphics.framework in Frameworks */,
+				F0A45BC6198A27ED00A14569 /* StoreKit.framework in Frameworks */,
+				F0A45BC5198A27D100A14569 /* libsqlite3.dylib in Frameworks */,
+				F0A45BC2198A24F700A14569 /* QuartzCore.framework in Frameworks */,
+				F0A45BC0198A24EF00A14569 /* SystemConfiguration.framework in Frameworks */,
+				F0A45BBE198A24E200A14569 /* CFNetwork.framework in Frameworks */,
+				F0A45BBA198A24C900A14569 /* Security.framework in Frameworks */,
+				F0A45BB8198A223E00A14569 /* libYouMi.a in Frameworks */,
+				F0A45BB7198A223E00A14569 /* libOpenIDFA.a in Frameworks */,
 				F042C0DA19877FE900DAE2E8 /* UIKit.framework in Frameworks */,
 				F042C0D619877FE900DAE2E8 /* Foundation.framework in Frameworks */,
 			);
@@ -120,6 +153,12 @@
 		F042C0D419877FE900DAE2E8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F0A45BC3198A250000A14569 /* libsqlite3.dylib */,
+				F0A45BC1198A24F700A14569 /* QuartzCore.framework */,
+				F0A45BBF198A24EF00A14569 /* SystemConfiguration.framework */,
+				F0A45BBD198A24E200A14569 /* CFNetwork.framework */,
+				F0A45BBB198A24D000A14569 /* StoreKit.framework */,
+				F0A45BB9198A24C900A14569 /* Security.framework */,
 				F042C0D519877FE900DAE2E8 /* Foundation.framework */,
 				F042C0D719877FE900DAE2E8 /* CoreGraphics.framework */,
 				F042C0D919877FE900DAE2E8 /* UIKit.framework */,
@@ -131,6 +170,7 @@
 		F042C0DB19877FE900DAE2E8 /* Want2Die */ = {
 			isa = PBXGroup;
 			children = (
+				F0A45BAA198A223E00A14569 /* lib */,
 				F042C0E419877FE900DAE2E8 /* AppDelegate.h */,
 				F042C0E519877FE900DAE2E8 /* AppDelegate.m */,
 				F0086F0719889060009E7E18 /* GameViewController.h */,
@@ -147,6 +187,7 @@
 		F042C0DC19877FE900DAE2E8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F0A45BC7198A2A2D00A14569 /* kidCat.png */,
 				F0A45BA4198A12A800A14569 /* leftCat_Female.png */,
 				F0A45BA5198A12A800A14569 /* rightCat_Female.png */,
 				F0A45BA6198A12A800A14569 /* upCat_Female.png */,
@@ -179,6 +220,32 @@
 				F042C0FD19877FEA00DAE2E8 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F0A45BAA198A223E00A14569 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				F0A45BAB198A223E00A14569 /* include */,
+				F0A45BB5198A223E00A14569 /* libOpenIDFA.a */,
+				F0A45BB6198A223E00A14569 /* libYouMi.a */,
+			);
+			path = lib;
+			sourceTree = SOURCE_ROOT;
+		};
+		F0A45BAB198A223E00A14569 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				F0A45BAC198A223E00A14569 /* YouMiConfig.h */,
+				F0A45BAD198A223E00A14569 /* YouMiDelegateProtocol.h */,
+				F0A45BAE198A223E00A14569 /* YouMiPointsManager.h */,
+				F0A45BAF198A223E00A14569 /* YouMiSpots.h */,
+				F0A45BB0198A223E00A14569 /* YouMiView.h */,
+				F0A45BB1198A223E00A14569 /* YouMiWall.h */,
+				F0A45BB2198A223E00A14569 /* YouMiWallAppModel.h */,
+				F0A45BB3198A223E00A14569 /* YouMiWallSpot.h */,
+				F0A45BB4198A223E00A14569 /* YouMiWallSpotView.h */,
+			);
+			path = include;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,6 +329,7 @@
 				F0086F0B19889060009E7E18 /* GameViewController.xib in Resources */,
 				F0A45BA7198A12A800A14569 /* leftCat_Female.png in Resources */,
 				F0A45B9D198A11D400A14569 /* upCat_Male.png in Resources */,
+				F0A45BC8198A2A2D00A14569 /* kidCat.png in Resources */,
 				F0A45B9F198A11DF00A14569 /* rightCat_Male.png in Resources */,
 				F0A45B9B198A11C400A14569 /* leftCat_Male.png in Resources */,
 				F0A45B9A198A11C400A14569 /* downCat_Male.png in Resources */,
@@ -409,6 +477,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Want2Die/Want2Die-Prefix.pch";
 				INFOPLIST_FILE = "Want2Die/Want2Die-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/lib",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
@@ -423,6 +495,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Want2Die/Want2Die-Prefix.pch";
 				INFOPLIST_FILE = "Want2Die/Want2Die-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/lib",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;

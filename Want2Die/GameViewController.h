@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface GameViewController : UIViewController
+#import "YouMiDelegateProtocol.h"
+@interface GameViewController : UIViewController<YouMiDelegate>
 
 @end
