@@ -8,7 +8,7 @@
 
 #import "GameViewController.h"
 #import "CatCase.h"
-#import "NSObject+Expansion.h"
+
 #define WIDTH 20
 #define MOVE_LEN 5
 
@@ -16,8 +16,6 @@
 {
 
     UIButton * beginButton;
-//    CatCase *cat;
-
     NSTimer *timer;
     NSTimer *addCatTimer;
     NSMutableArray *catArray;
@@ -58,22 +56,25 @@
     [self.view addSubview:beginButton];
     [self addCat];
     [self addCat];
+    [self addCat];
 }
 -(void)addCat
 {
     //一定范围内的随机位置
-    CGPoint catPoint = [self catDefaltLocation];
+    CGPoint catPoint = [self randomCatDefaltLocation];
     //初始猫
-    CatCase *cat = [[CatCase alloc]initWithFrame:CGRectMake(catPoint.x, catPoint.y, 100, 100)];
+    CatCase *cat = [[CatCase alloc]initWithFrame:CGRectMake(0, 0, 50, 50)];
+    cat.center = catPoint;
     cat.userInteractionEnabled = YES;
-    
     [self.view addSubview:cat];
     [catArray addObject:cat];
+    
+    cat.tag = 100+catArray.count;
     
 }
 
 //一定范围内的随机位置
--(CGPoint)catDefaltLocation
+-(CGPoint)randomCatDefaltLocation
 {
     //m + rand()%(n-m)
     CGPoint center = self.view.center;
@@ -81,8 +82,8 @@
     int maxX = center.x+40;
     int minY = center.y-40;
     int maxY = center.y+40;
-    int catX = minX + [NSObject getRandomNumber]%(maxX-minX);
-    int catY = minY + [NSObject getRandomNumber]%(maxY-minY);
+    int catX = minX + arc4random()%(maxX-minX);
+    int catY = minY + arc4random()%(maxY-minY);
     
     CGPoint catPoint= CGPointMake(catX, catY);
     return catPoint;
@@ -144,12 +145,18 @@
             cat2 = [catArray objectAtIndex:j];
             //判断性别
             if (cat1.catSexState!=cat2.catSexState) {
-                CGRect rect1 = cat1.catView.frame;
-                CGRect rect2 = cat2.catView.frame;
+                CGPoint cat1center = cat1.center;
+                CGPoint cat2center = cat2.center;
+                CGRect rect1 = CGRectMake(cat1center.x-10, cat1center.y-10, 20, 20);
+                CGRect rect2 = CGRectMake(cat2center.x-10, cat2center.y-10, 20, 20);
                 BOOL ismeet = CGRectIntersectsRect(rect1,rect2);
-                 NSLog(@"ifReadOnly value: %@" ,ismeet?@"YES":@"NO");
                 if (ismeet) {
+                    [cat1 removeFromSuperview];
+                    [cat2 removeFromSuperview];
+                    [catArray removeObject:cat1];
                     [catArray removeObject:cat2];
+                    [self addCat];
+                    break;
                     
                 }
             }

@@ -10,9 +10,6 @@
 		F0086F0A19889060009E7E18 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0086F0819889060009E7E18 /* GameViewController.m */; };
 		F0086F0B19889060009E7E18 /* GameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0086F0919889060009E7E18 /* GameViewController.xib */; };
 		F0086F0E19889C95009E7E18 /* CatCase.m in Sources */ = {isa = PBXBuildFile; fileRef = F0086F0D19889C95009E7E18 /* CatCase.m */; };
-		F0086F101988C986009E7E18 /* maleCat.png in Resources */ = {isa = PBXBuildFile; fileRef = F0086F0F1988C986009E7E18 /* maleCat.png */; };
-		F0086F121988D963009E7E18 /* femaleCat.png in Resources */ = {isa = PBXBuildFile; fileRef = F0086F111988D963009E7E18 /* femaleCat.png */; };
-		F0086F161988DECB009E7E18 /* NSObject+Expansion.m in Sources */ = {isa = PBXBuildFile; fileRef = F0086F151988DECB009E7E18 /* NSObject+Expansion.m */; };
 		F042C0D619877FE900DAE2E8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F042C0D519877FE900DAE2E8 /* Foundation.framework */; };
 		F042C0D819877FE900DAE2E8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F042C0D719877FE900DAE2E8 /* CoreGraphics.framework */; };
 		F042C0DA19877FE900DAE2E8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F042C0D919877FE900DAE2E8 /* UIKit.framework */; };
@@ -25,6 +22,14 @@
 		F042C0F719877FE900DAE2E8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F042C0D919877FE900DAE2E8 /* UIKit.framework */; };
 		F042C0FF19877FEA00DAE2E8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F042C0FD19877FEA00DAE2E8 /* InfoPlist.strings */; };
 		F042C10119877FEA00DAE2E8 /* Want2DieTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F042C10019877FEA00DAE2E8 /* Want2DieTests.m */; };
+		F0A45B9A198A11C400A14569 /* downCat_Male.png in Resources */ = {isa = PBXBuildFile; fileRef = F0A45B98198A11C400A14569 /* downCat_Male.png */; };
+		F0A45B9B198A11C400A14569 /* leftCat_Male.png in Resources */ = {isa = PBXBuildFile; fileRef = F0A45B99198A11C400A14569 /* leftCat_Male.png */; };
+		F0A45B9D198A11D400A14569 /* upCat_Male.png in Resources */ = {isa = PBXBuildFile; fileRef = F0A45B9C198A11D400A14569 /* upCat_Male.png */; };
+		F0A45B9F198A11DF00A14569 /* rightCat_Male.png in Resources */ = {isa = PBXBuildFile; fileRef = F0A45B9E198A11DF00A14569 /* rightCat_Male.png */; };
+		F0A45BA1198A126900A14569 /* downCat_Female.png in Resources */ = {isa = PBXBuildFile; fileRef = F0A45BA0198A126900A14569 /* downCat_Female.png */; };
+		F0A45BA7198A12A800A14569 /* leftCat_Female.png in Resources */ = {isa = PBXBuildFile; fileRef = F0A45BA4198A12A800A14569 /* leftCat_Female.png */; };
+		F0A45BA8198A12A800A14569 /* rightCat_Female.png in Resources */ = {isa = PBXBuildFile; fileRef = F0A45BA5198A12A800A14569 /* rightCat_Female.png */; };
+		F0A45BA9198A12A800A14569 /* upCat_Female.png in Resources */ = {isa = PBXBuildFile; fileRef = F0A45BA6198A12A800A14569 /* upCat_Female.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,10 +48,6 @@
 		F0086F0919889060009E7E18 /* GameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameViewController.xib; sourceTree = "<group>"; };
 		F0086F0C19889C95009E7E18 /* CatCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CatCase.h; sourceTree = "<group>"; };
 		F0086F0D19889C95009E7E18 /* CatCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CatCase.m; sourceTree = "<group>"; };
-		F0086F0F1988C986009E7E18 /* maleCat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = maleCat.png; sourceTree = "<group>"; };
-		F0086F111988D963009E7E18 /* femaleCat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = femaleCat.png; sourceTree = "<group>"; };
-		F0086F141988DECB009E7E18 /* NSObject+Expansion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Expansion.h"; sourceTree = "<group>"; };
-		F0086F151988DECB009E7E18 /* NSObject+Expansion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Expansion.m"; sourceTree = "<group>"; };
 		F042C0D219877FE900DAE2E8 /* Want2Die.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Want2Die.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F042C0D519877FE900DAE2E8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F042C0D719877FE900DAE2E8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -63,6 +64,14 @@
 		F042C0FC19877FE900DAE2E8 /* Want2DieTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Want2DieTests-Info.plist"; sourceTree = "<group>"; };
 		F042C0FE19877FEA00DAE2E8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F042C10019877FEA00DAE2E8 /* Want2DieTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Want2DieTests.m; sourceTree = "<group>"; };
+		F0A45B98198A11C400A14569 /* downCat_Male.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = downCat_Male.png; sourceTree = "<group>"; };
+		F0A45B99198A11C400A14569 /* leftCat_Male.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leftCat_Male.png; sourceTree = "<group>"; };
+		F0A45B9C198A11D400A14569 /* upCat_Male.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = upCat_Male.png; sourceTree = "<group>"; };
+		F0A45B9E198A11DF00A14569 /* rightCat_Male.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rightCat_Male.png; sourceTree = "<group>"; };
+		F0A45BA0198A126900A14569 /* downCat_Female.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = downCat_Female.png; sourceTree = "<group>"; };
+		F0A45BA4198A12A800A14569 /* leftCat_Female.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leftCat_Female.png; sourceTree = "<group>"; };
+		F0A45BA5198A12A800A14569 /* rightCat_Female.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rightCat_Female.png; sourceTree = "<group>"; };
+		F0A45BA6198A12A800A14569 /* upCat_Female.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = upCat_Female.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,8 +138,6 @@
 				F0086F0919889060009E7E18 /* GameViewController.xib */,
 				F0086F0C19889C95009E7E18 /* CatCase.h */,
 				F0086F0D19889C95009E7E18 /* CatCase.m */,
-				F0086F141988DECB009E7E18 /* NSObject+Expansion.h */,
-				F0086F151988DECB009E7E18 /* NSObject+Expansion.m */,
 				F042C0ED19877FE900DAE2E8 /* Images.xcassets */,
 				F042C0DC19877FE900DAE2E8 /* Supporting Files */,
 			);
@@ -140,8 +147,14 @@
 		F042C0DC19877FE900DAE2E8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				F0086F0F1988C986009E7E18 /* maleCat.png */,
-				F0086F111988D963009E7E18 /* femaleCat.png */,
+				F0A45BA4198A12A800A14569 /* leftCat_Female.png */,
+				F0A45BA5198A12A800A14569 /* rightCat_Female.png */,
+				F0A45BA6198A12A800A14569 /* upCat_Female.png */,
+				F0A45BA0198A126900A14569 /* downCat_Female.png */,
+				F0A45B9E198A11DF00A14569 /* rightCat_Male.png */,
+				F0A45B9C198A11D400A14569 /* upCat_Male.png */,
+				F0A45B98198A11C400A14569 /* downCat_Male.png */,
+				F0A45B99198A11C400A14569 /* leftCat_Male.png */,
 				F042C0DD19877FE900DAE2E8 /* Want2Die-Info.plist */,
 				F042C0DE19877FE900DAE2E8 /* InfoPlist.strings */,
 				F042C0E119877FE900DAE2E8 /* main.m */,
@@ -244,10 +257,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0A45BA9198A12A800A14569 /* upCat_Female.png in Resources */,
+				F0A45BA1198A126900A14569 /* downCat_Female.png in Resources */,
 				F0086F0B19889060009E7E18 /* GameViewController.xib in Resources */,
-				F0086F121988D963009E7E18 /* femaleCat.png in Resources */,
+				F0A45BA7198A12A800A14569 /* leftCat_Female.png in Resources */,
+				F0A45B9D198A11D400A14569 /* upCat_Male.png in Resources */,
+				F0A45B9F198A11DF00A14569 /* rightCat_Male.png in Resources */,
+				F0A45B9B198A11C400A14569 /* leftCat_Male.png in Resources */,
+				F0A45B9A198A11C400A14569 /* downCat_Male.png in Resources */,
+				F0A45BA8198A12A800A14569 /* rightCat_Female.png in Resources */,
 				F042C0EE19877FE900DAE2E8 /* Images.xcassets in Resources */,
-				F0086F101988C986009E7E18 /* maleCat.png in Resources */,
 				F042C0E019877FE900DAE2E8 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -271,7 +290,6 @@
 				F042C0E619877FE900DAE2E8 /* AppDelegate.m in Sources */,
 				F0086F0A19889060009E7E18 /* GameViewController.m in Sources */,
 				F042C0E219877FE900DAE2E8 /* main.m in Sources */,
-				F0086F161988DECB009E7E18 /* NSObject+Expansion.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

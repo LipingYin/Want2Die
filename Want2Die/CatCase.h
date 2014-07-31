@@ -17,8 +17,10 @@ typedef NS_ENUM(NSInteger, DirectionState)
 
 typedef NS_ENUM(NSInteger, CatSexState)
 {
-    CatSexStateMale=0,
+    CatSexStateKid=0,
+    CatSexStateMale,
     CatSexStateFemale
+    
 };
 
 @interface CatCase : UIView
@@ -31,6 +33,5 @@ typedef NS_ENUM(NSInteger, CatSexState)
 @property (nonatomic) CatSexState catSexState;
 @property (nonatomic,strong)UIImageView *catView;
 
--(DirectionState)catDefaultDirection;
--(CatSexState)catSexState;
+
 @end

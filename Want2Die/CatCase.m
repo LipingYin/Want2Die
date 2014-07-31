@@ -7,7 +7,7 @@
 //
 
 #import "CatCase.h"
-#import "NSObject+Expansion.h"
+
 @implementation CatCase
 @synthesize catSexState;
 @synthesize currentDirectionState;
@@ -16,15 +16,10 @@
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        currentDirectionState = [self catDefaultDirection];
-        catSexState = [self catSexState];
-        if (catSexState == CatSexStateMale) {
-            catView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"maleCat"]];
-        }else
-        {
-            catView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"femaleCat"]];
-        }
-        
+        currentDirectionState = [self randomCatDefaultDirection];
+        catSexState = [self randomCatSexState];
+        catView = [[UIImageView alloc]init];
+        [self setCatImage];
         CGRect rect = self.frame;
         catView.frame = CGRectMake(rect.size.width/2-10, rect.size.height/2-10, 20, 20);
         [self addSubview:catView];
@@ -32,12 +27,34 @@
     }
     return self;
 }
+//设置猫图
+-(void)setCatImage
+{
+    if (catSexState == CatSexStateMale &&currentDirectionState ==DirectionStateUP) {
+        catView.image =  [UIImage imageNamed:@"upCat_Male"];
+    }else if (catSexState == CatSexStateMale &&currentDirectionState ==DirectionStateDown) {
+        catView.image =  [UIImage imageNamed:@"downCat_Male"];
+    }else if (catSexState == CatSexStateMale &&currentDirectionState ==DirectionStateLeft) {
+        catView.image =  [UIImage imageNamed:@"leftCat_Male"];
+    }else if (catSexState == CatSexStateMale &&currentDirectionState ==DirectionStateRight) {
+        catView.image =  [UIImage imageNamed:@"rightCat_Male"];
+    }else if (catSexState == CatSexStateFemale &&currentDirectionState ==DirectionStateUP) {
+        catView.image =  [UIImage imageNamed:@"upCat_Female"];
+    }else if (catSexState == CatSexStateFemale &&currentDirectionState ==DirectionStateDown) {
+        catView.image =  [UIImage imageNamed:@"downCat_Female"];
+    }else if (catSexState == CatSexStateFemale &&currentDirectionState ==DirectionStateLeft) {
+        catView.image =  [UIImage imageNamed:@"leftCat_Female"];
+    }else if (catSexState == CatSexStateFemale &&currentDirectionState ==DirectionStateRight) {
+        catView.image =  [UIImage imageNamed:@"rightCat_Female"];
+    }
+
+}
 
 //返回随机方向
--(DirectionState)catDefaultDirection
+-(DirectionState)randomCatDefaultDirection
 {
 
-    switch ([NSObject getRandomNumber]%4) {
+    switch (arc4random()%4) {
         case 0:
             currentDirectionState = DirectionStateUP;
             break;
@@ -57,10 +74,10 @@
     return currentDirectionState;
 }
 //返回随机性别
--(CatSexState)catSexState
+-(CatSexState)randomCatSexState
 {
 
-    int sexState = [NSObject getRandomNumber]%2;
+    int sexState = arc4random()%2;
     switch (sexState) {
         case 0:
             catSexState = CatSexStateMale;
@@ -110,5 +127,7 @@
     {
         self.currentDirectionState = DirectionStateRight;
     }
+    
+    [self setCatImage];
 }
 @end
