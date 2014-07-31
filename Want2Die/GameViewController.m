@@ -12,9 +12,15 @@
 #define WIDTH 20
 #define MOVE_LEN 5
 
+#define isIOS7 ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0)
+#define FUll_VIEW_WIDTH ([[UIScreen mainScreen] bounds].size.width)
+#define FUll_VIEW_HEIGHT ([[UIScreen mainScreen] bounds].size.height)-(isIOS7?0:20)
+#define TOP_BAR_HEIGHT (isIOS7?[UIApplication sharedApplication].statusBarFrame.size.height+44.0:44.0)
+#define RGB(A,B,C) [UIColor colorWithRed:A/255.0 green:B/255.0 blue:C/255.0 alpha:1.0]
+
+
 @interface GameViewController ()
 {
-
     UIButton * beginButton;
     NSTimer *timer;
     NSTimer *addCatTimer;
@@ -23,7 +29,6 @@
     int maleCatCount;
     int femaleCatCount;
     int kidCatCount;
-    
 }
 @end
 
@@ -63,7 +68,7 @@
     [self.view addSubview:adView320x50];
     
     YouMiView *adView2=[[YouMiView alloc] initWithContentSizeIdentifier:YouMiBannerContentSizeIdentifier320x50 delegate:self];
-    adView2.frame = CGRectMake(0, self.view.frame.size.height-50, CGRectGetWidth(adView2.bounds), CGRectGetHeight(adView2.bounds));
+    adView2.frame = CGRectMake(0, FUll_VIEW_HEIGHT-50, CGRectGetWidth(adView2.bounds), CGRectGetHeight(adView2.bounds));
     adView2.backgroundColor = [UIColor colorWithWhite:0.8 alpha:0.5];
     [adView2 start];
     
@@ -105,7 +110,7 @@
         }
     }
     
-    cat.catSexState = maleCatCount>femaleCatCount?CatSexStateFemale:CatSexStateMale;
+//    cat.catSexState = maleCatCount>femaleCatCount?CatSexStateFemale:CatSexStateMale;
     
 }
 
@@ -180,7 +185,6 @@
             cat1 = [catArray objectAtIndex:i];
             cat2 = [catArray objectAtIndex:j];
             //判断性别
-  
             if ((cat1.catSexState!=cat2.catSexState)&&cat1.catSexState!=CatSexStateKid&&cat2.catSexState!=CatSexStateKid) {
                 CGPoint cat1center = cat1.center;
                 CGPoint cat2center = cat2.center;
@@ -192,6 +196,7 @@
                     [cat2 removeFromSuperview];
                     [catArray removeObject:cat1];
                     [catArray removeObject:cat2];
+                    
                     [self addCat];
                     break;
                     
@@ -203,9 +208,8 @@
 //判断是否出边界
 -(void)isBeyondBorder:(CGPoint)point
 {
-    int height = self.view.frame.size.height;
 
-    if(point.x>320||point.x<0||point.y<90||point.y>(height-90))
+    if(point.x>FUll_VIEW_WIDTH||point.x<0||point.y<(isIOS7?50:70)||point.y>(FUll_VIEW_HEIGHT-50))
     {
         [self failView];
         NSLog(@"x:%f  y:%f",point.x,point.y);

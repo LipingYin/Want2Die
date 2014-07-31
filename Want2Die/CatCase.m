@@ -89,8 +89,7 @@
         case 1:
             catSexState = CatSexStateFemale;
             break;
-            
-          
+ 
     }
     [self setCatImage];
 }
@@ -115,6 +114,7 @@
     [recognizer setDirection:(UISwipeGestureRecognizerDirectionDown)];
     [self addGestureRecognizer:recognizer];
 }
+
 -(void)handleSwipeFrom:(UISwipeGestureRecognizer *)recognizer
 {
     if(recognizer.direction==UISwipeGestureRecognizerDirectionUp)
