@@ -10,6 +10,8 @@
 		F0086F0A19889060009E7E18 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0086F0819889060009E7E18 /* GameViewController.m */; };
 		F0086F0B19889060009E7E18 /* GameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0086F0919889060009E7E18 /* GameViewController.xib */; };
 		F0086F0E19889C95009E7E18 /* CatCase.m in Sources */ = {isa = PBXBuildFile; fileRef = F0086F0D19889C95009E7E18 /* CatCase.m */; };
+		F04099CA198B2B5100592985 /* libOpenIDFA.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F04099C8198B2B5100592985 /* libOpenIDFA.a */; };
+		F04099CB198B2B5100592985 /* libYouMi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F04099C9198B2B5100592985 /* libYouMi.a */; };
 		F042C0D619877FE900DAE2E8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F042C0D519877FE900DAE2E8 /* Foundation.framework */; };
 		F042C0DA19877FE900DAE2E8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F042C0D919877FE900DAE2E8 /* UIKit.framework */; };
 		F042C0E019877FE900DAE2E8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F042C0DE19877FE900DAE2E8 /* InfoPlist.strings */; };
@@ -29,8 +31,6 @@
 		F0A45BA7198A12A800A14569 /* leftCat_Female.png in Resources */ = {isa = PBXBuildFile; fileRef = F0A45BA4198A12A800A14569 /* leftCat_Female.png */; };
 		F0A45BA8198A12A800A14569 /* rightCat_Female.png in Resources */ = {isa = PBXBuildFile; fileRef = F0A45BA5198A12A800A14569 /* rightCat_Female.png */; };
 		F0A45BA9198A12A800A14569 /* upCat_Female.png in Resources */ = {isa = PBXBuildFile; fileRef = F0A45BA6198A12A800A14569 /* upCat_Female.png */; };
-		F0A45BB7198A223E00A14569 /* libOpenIDFA.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A45BB5198A223E00A14569 /* libOpenIDFA.a */; };
-		F0A45BB8198A223E00A14569 /* libYouMi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A45BB6198A223E00A14569 /* libYouMi.a */; };
 		F0A45BBA198A24C900A14569 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A45BB9198A24C900A14569 /* Security.framework */; };
 		F0A45BBE198A24E200A14569 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A45BBD198A24E200A14569 /* CFNetwork.framework */; };
 		F0A45BC0198A24EF00A14569 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A45BBF198A24EF00A14569 /* SystemConfiguration.framework */; };
@@ -56,6 +56,17 @@
 		F0086F0919889060009E7E18 /* GameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameViewController.xib; sourceTree = "<group>"; };
 		F0086F0C19889C95009E7E18 /* CatCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CatCase.h; sourceTree = "<group>"; };
 		F0086F0D19889C95009E7E18 /* CatCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CatCase.m; sourceTree = "<group>"; };
+		F04099BF198B2B5100592985 /* YouMiConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouMiConfig.h; sourceTree = "<group>"; };
+		F04099C0198B2B5100592985 /* YouMiDelegateProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouMiDelegateProtocol.h; sourceTree = "<group>"; };
+		F04099C1198B2B5100592985 /* YouMiPointsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouMiPointsManager.h; sourceTree = "<group>"; };
+		F04099C2198B2B5100592985 /* YouMiSpots.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouMiSpots.h; sourceTree = "<group>"; };
+		F04099C3198B2B5100592985 /* YouMiView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouMiView.h; sourceTree = "<group>"; };
+		F04099C4198B2B5100592985 /* YouMiWall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouMiWall.h; sourceTree = "<group>"; };
+		F04099C5198B2B5100592985 /* YouMiWallAppModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouMiWallAppModel.h; sourceTree = "<group>"; };
+		F04099C6198B2B5100592985 /* YouMiWallSpot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouMiWallSpot.h; sourceTree = "<group>"; };
+		F04099C7198B2B5100592985 /* YouMiWallSpotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouMiWallSpotView.h; sourceTree = "<group>"; };
+		F04099C8198B2B5100592985 /* libOpenIDFA.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libOpenIDFA.a; sourceTree = "<group>"; };
+		F04099C9198B2B5100592985 /* libYouMi.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libYouMi.a; sourceTree = "<group>"; };
 		F042C0D219877FE900DAE2E8 /* Want2Die.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Want2Die.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F042C0D519877FE900DAE2E8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F042C0D719877FE900DAE2E8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -80,17 +91,6 @@
 		F0A45BA4198A12A800A14569 /* leftCat_Female.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leftCat_Female.png; sourceTree = "<group>"; };
 		F0A45BA5198A12A800A14569 /* rightCat_Female.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rightCat_Female.png; sourceTree = "<group>"; };
 		F0A45BA6198A12A800A14569 /* upCat_Female.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = upCat_Female.png; sourceTree = "<group>"; };
-		F0A45BAC198A223E00A14569 /* YouMiConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouMiConfig.h; sourceTree = "<group>"; };
-		F0A45BAD198A223E00A14569 /* YouMiDelegateProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouMiDelegateProtocol.h; sourceTree = "<group>"; };
-		F0A45BAE198A223E00A14569 /* YouMiPointsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouMiPointsManager.h; sourceTree = "<group>"; };
-		F0A45BAF198A223E00A14569 /* YouMiSpots.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouMiSpots.h; sourceTree = "<group>"; };
-		F0A45BB0198A223E00A14569 /* YouMiView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouMiView.h; sourceTree = "<group>"; };
-		F0A45BB1198A223E00A14569 /* YouMiWall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouMiWall.h; sourceTree = "<group>"; };
-		F0A45BB2198A223E00A14569 /* YouMiWallAppModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouMiWallAppModel.h; sourceTree = "<group>"; };
-		F0A45BB3198A223E00A14569 /* YouMiWallSpot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouMiWallSpot.h; sourceTree = "<group>"; };
-		F0A45BB4198A223E00A14569 /* YouMiWallSpotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouMiWallSpotView.h; sourceTree = "<group>"; };
-		F0A45BB5198A223E00A14569 /* libOpenIDFA.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libOpenIDFA.a; sourceTree = "<group>"; };
-		F0A45BB6198A223E00A14569 /* libYouMi.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libYouMi.a; sourceTree = "<group>"; };
 		F0A45BB9198A24C900A14569 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		F0A45BBB198A24D000A14569 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		F0A45BBD198A24E200A14569 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -106,13 +106,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0A45BC6198A27ED00A14569 /* StoreKit.framework in Frameworks */,
+				F04099CB198B2B5100592985 /* libYouMi.a in Frameworks */,
+				F04099CA198B2B5100592985 /* libOpenIDFA.a in Frameworks */,
 				F0A45BC5198A27D100A14569 /* libsqlite3.dylib in Frameworks */,
 				F0A45BC2198A24F700A14569 /* QuartzCore.framework in Frameworks */,
 				F0A45BC0198A24EF00A14569 /* SystemConfiguration.framework in Frameworks */,
 				F0A45BBE198A24E200A14569 /* CFNetwork.framework in Frameworks */,
 				F0A45BBA198A24C900A14569 /* Security.framework in Frameworks */,
-				F0A45BB8198A223E00A14569 /* libYouMi.a in Frameworks */,
-				F0A45BB7198A223E00A14569 /* libOpenIDFA.a in Frameworks */,
 				F042C0DA19877FE900DAE2E8 /* UIKit.framework in Frameworks */,
 				F042C0D619877FE900DAE2E8 /* Foundation.framework in Frameworks */,
 			);
@@ -131,6 +131,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F04099BD198B2B5100592985 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				F04099BE198B2B5100592985 /* include */,
+				F04099C8198B2B5100592985 /* libOpenIDFA.a */,
+				F04099C9198B2B5100592985 /* libYouMi.a */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		F04099BE198B2B5100592985 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				F04099BF198B2B5100592985 /* YouMiConfig.h */,
+				F04099C0198B2B5100592985 /* YouMiDelegateProtocol.h */,
+				F04099C1198B2B5100592985 /* YouMiPointsManager.h */,
+				F04099C2198B2B5100592985 /* YouMiSpots.h */,
+				F04099C3198B2B5100592985 /* YouMiView.h */,
+				F04099C4198B2B5100592985 /* YouMiWall.h */,
+				F04099C5198B2B5100592985 /* YouMiWallAppModel.h */,
+				F04099C6198B2B5100592985 /* YouMiWallSpot.h */,
+				F04099C7198B2B5100592985 /* YouMiWallSpotView.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
 		F042C0C919877FE900DAE2E8 = {
 			isa = PBXGroup;
 			children = (
@@ -170,7 +196,7 @@
 		F042C0DB19877FE900DAE2E8 /* Want2Die */ = {
 			isa = PBXGroup;
 			children = (
-				F0A45BAA198A223E00A14569 /* lib */,
+				F04099BD198B2B5100592985 /* lib */,
 				F042C0E419877FE900DAE2E8 /* AppDelegate.h */,
 				F042C0E519877FE900DAE2E8 /* AppDelegate.m */,
 				F0086F0719889060009E7E18 /* GameViewController.h */,
@@ -220,32 +246,6 @@
 				F042C0FD19877FEA00DAE2E8 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		F0A45BAA198A223E00A14569 /* lib */ = {
-			isa = PBXGroup;
-			children = (
-				F0A45BAB198A223E00A14569 /* include */,
-				F0A45BB5198A223E00A14569 /* libOpenIDFA.a */,
-				F0A45BB6198A223E00A14569 /* libYouMi.a */,
-			);
-			path = lib;
-			sourceTree = SOURCE_ROOT;
-		};
-		F0A45BAB198A223E00A14569 /* include */ = {
-			isa = PBXGroup;
-			children = (
-				F0A45BAC198A223E00A14569 /* YouMiConfig.h */,
-				F0A45BAD198A223E00A14569 /* YouMiDelegateProtocol.h */,
-				F0A45BAE198A223E00A14569 /* YouMiPointsManager.h */,
-				F0A45BAF198A223E00A14569 /* YouMiSpots.h */,
-				F0A45BB0198A223E00A14569 /* YouMiView.h */,
-				F0A45BB1198A223E00A14569 /* YouMiWall.h */,
-				F0A45BB2198A223E00A14569 /* YouMiWallAppModel.h */,
-				F0A45BB3198A223E00A14569 /* YouMiWallSpot.h */,
-				F0A45BB4198A223E00A14569 /* YouMiWallSpotView.h */,
-			);
-			path = include;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -480,6 +480,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/lib",
+					"$(PROJECT_DIR)/Want2Die/lib",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -498,6 +499,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/lib",
+					"$(PROJECT_DIR)/Want2Die/lib",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
