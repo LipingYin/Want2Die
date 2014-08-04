@@ -9,6 +9,7 @@
 #import "GameViewController.h"
 #import "CatCase.h"
 #import "YouMiView.h"
+#import "DXAlertView.h"
 #define WIDTH 20
 #define MOVE_LEN 5
 
@@ -17,6 +18,10 @@
 #define FUll_VIEW_HEIGHT ([[UIScreen mainScreen] bounds].size.height)-(isIOS7?0:20)
 #define TOP_BAR_HEIGHT (isIOS7?[UIApplication sharedApplication].statusBarFrame.size.height+44.0:44.0)
 #define RGB(A,B,C) [UIColor colorWithRed:A/255.0 green:B/255.0 blue:C/255.0 alpha:1.0]
+
+#define CAT_MOVE_TIMER 0.05 //猫移动
+#define ADD_CAT_TIMER 5.0  //增加猫的间隔
+
 
 
 @interface GameViewController ()
@@ -63,6 +68,7 @@
     YouMiView *adView320x50=[[YouMiView alloc] initWithContentSizeIdentifier:YouMiBannerContentSizeIdentifier320x50 delegate:self];
     adView320x50.frame = CGRectMake(0, 0, CGRectGetWidth(adView320x50.bounds), CGRectGetHeight(adView320x50.bounds));
     adView320x50.backgroundColor = [UIColor colorWithWhite:0.8 alpha:0.5];
+    adView320x50.tag = 301;
     [adView320x50 start];
     
     [self.view addSubview:adView320x50];
@@ -70,6 +76,7 @@
     YouMiView *adView2=[[YouMiView alloc] initWithContentSizeIdentifier:YouMiBannerContentSizeIdentifier320x50 delegate:self];
     adView2.frame = CGRectMake(0, FUll_VIEW_HEIGHT-50, CGRectGetWidth(adView2.bounds), CGRectGetHeight(adView2.bounds));
     adView2.backgroundColor = [UIColor colorWithWhite:0.8 alpha:0.5];
+    adView2.tag = 302;
     [adView2 start];
     
     [self.view addSubview:adView2];
@@ -81,11 +88,9 @@
     beginButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     beginButton.frame = CGRectMake(20, 20, 100, 40);
     [beginButton setTitle:@"开始" forState:UIControlStateNormal];
-    [beginButton addTarget:self action:@selector(beginButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+    [beginButton addTarget:self action:@selector(beginButtonClick) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:beginButton];
-    [self addCat];
-    [self addCat];
-    [self addCat];
+
 }
 -(void)addCat
 {
@@ -109,9 +114,7 @@
             kidCatCount++;
         }
     }
-    
-//    cat.catSexState = maleCatCount>femaleCatCount?CatSexStateFemale:CatSexStateMale;
-    
+
 }
 
 //一定范围内的随机位置
@@ -130,14 +133,19 @@
     return catPoint;
 }
 //开始按钮点击
-- (void)beginButtonClick:(id)sender {
+- (void)beginButtonClick{
   
+    [self addCat];
+    [self addCat];
+    [self addCat];
+    
     static BOOL isPlaying = NO;
     beginButton.hidden = YES;
     beginButton.enabled = NO;
     if (!isPlaying) {
-        timer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(catMove) userInfo:nil repeats:YES];
-        addCatTimer = [NSTimer scheduledTimerWithTimeInterval:10 target:self selector:@selector(addCat) userInfo:nil repeats:YES];
+    
+        timer = [NSTimer scheduledTimerWithTimeInterval:CAT_MOVE_TIMER target:self selector:@selector(catMove) userInfo:nil repeats:YES];
+       addCatTimer = [NSTimer scheduledTimerWithTimeInterval:ADD_CAT_TIMER target:self selector:@selector(addCat) userInfo:nil repeats:YES];
 
     }
  
@@ -219,14 +227,36 @@
 // 失败
 -(void)failView
 {
-    NSLog(@"失败");
+    DXAlertView *alert = [[DXAlertView alloc] initWithTitle:@"游戏结束" contentText:@"You have bought something" leftButtonTitle:@"Ok" rightButtonTitle:@"重来"];
+    [alert show];
+    alert.leftBlock = ^() {
+        NSLog(@"left button clicked");
+    };
+    alert.rightBlock = ^() {
+        [catArray removeAllObjects];
+        for (CatCase *cat in  self.view.subviews) {
+            if (cat.tag!=302&&cat.tag!=301) {
+                [cat removeFromSuperview];
+            }
+        
+        }
+        [self beginButtonClick];
+
+
+    };
+    alert.dismissBlock = ^() {
+        NSLog(@"Do something interesting after dismiss block");
+    };
+
 
     if ([timer isValid]) {
         [timer invalidate];
+        timer = nil;
     }
     
     if ([addCatTimer isValid]) {
         [addCatTimer invalidate];
+        addCatTimer = nil;
     }
 
 }

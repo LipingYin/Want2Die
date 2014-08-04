@@ -12,6 +12,7 @@
 		F0086F0E19889C95009E7E18 /* CatCase.m in Sources */ = {isa = PBXBuildFile; fileRef = F0086F0D19889C95009E7E18 /* CatCase.m */; };
 		F04099CA198B2B5100592985 /* libOpenIDFA.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F04099C8198B2B5100592985 /* libOpenIDFA.a */; };
 		F04099CB198B2B5100592985 /* libYouMi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F04099C9198B2B5100592985 /* libYouMi.a */; };
+		F04099CE198B904600592985 /* DXAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = F04099CD198B904600592985 /* DXAlertView.m */; };
 		F042C0D619877FE900DAE2E8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F042C0D519877FE900DAE2E8 /* Foundation.framework */; };
 		F042C0DA19877FE900DAE2E8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F042C0D919877FE900DAE2E8 /* UIKit.framework */; };
 		F042C0E019877FE900DAE2E8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F042C0DE19877FE900DAE2E8 /* InfoPlist.strings */; };
@@ -67,6 +68,8 @@
 		F04099C7198B2B5100592985 /* YouMiWallSpotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouMiWallSpotView.h; sourceTree = "<group>"; };
 		F04099C8198B2B5100592985 /* libOpenIDFA.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libOpenIDFA.a; sourceTree = "<group>"; };
 		F04099C9198B2B5100592985 /* libYouMi.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libYouMi.a; sourceTree = "<group>"; };
+		F04099CC198B904600592985 /* DXAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXAlertView.h; sourceTree = "<group>"; };
+		F04099CD198B904600592985 /* DXAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXAlertView.m; sourceTree = "<group>"; };
 		F042C0D219877FE900DAE2E8 /* Want2Die.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Want2Die.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F042C0D519877FE900DAE2E8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F042C0D719877FE900DAE2E8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -204,6 +207,8 @@
 				F0086F0919889060009E7E18 /* GameViewController.xib */,
 				F0086F0C19889C95009E7E18 /* CatCase.h */,
 				F0086F0D19889C95009E7E18 /* CatCase.m */,
+				F04099CC198B904600592985 /* DXAlertView.h */,
+				F04099CD198B904600592985 /* DXAlertView.m */,
 				F042C0ED19877FE900DAE2E8 /* Images.xcassets */,
 				F042C0DC19877FE900DAE2E8 /* Supporting Files */,
 			);
@@ -357,6 +362,7 @@
 				F0086F0E19889C95009E7E18 /* CatCase.m in Sources */,
 				F042C0E619877FE900DAE2E8 /* AppDelegate.m in Sources */,
 				F0086F0A19889060009E7E18 /* GameViewController.m in Sources */,
+				F04099CE198B904600592985 /* DXAlertView.m in Sources */,
 				F042C0E219877FE900DAE2E8 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

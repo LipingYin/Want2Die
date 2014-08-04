@@ -8,10 +8,13 @@
 
 #import "CatCase.h"
 
+#define CAT_CHANGE_DIRECTION  5.0
+
 @implementation CatCase
 @synthesize catSexState;
 @synthesize currentDirectionState;
 @synthesize catView;
+
 
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
@@ -26,9 +29,12 @@
         catView.frame = CGRectMake(rect.size.width/2-10, rect.size.height/2-10, 20, 20);
         [self addSubview:catView];
         [self addGestureRecognizer];
+        
     }
     return self;
 }
+//自动改变方向
+
 //设置猫图
 -(void)setCatImage
 {
@@ -131,7 +137,6 @@
     {
         self.currentDirectionState = DirectionStateRight;
     }
-    
-    [self setCatImage];
+      [self setCatImage];
 }
 @end
