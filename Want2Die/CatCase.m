@@ -8,7 +8,7 @@
 
 #import "CatCase.h"
 
-#define CAT_CHANGE_DIRECTION  5.0
+#define CAT_CHANGE_DIRECTION  2.0
 
 @implementation CatCase
 @synthesize catSexState;
@@ -22,7 +22,8 @@
         currentDirectionState = [self randomCatDefaultDirection];
         //新生猫的状态为kid，5秒钟以后随机男女
         catSexState = CatSexStateKid;
-        [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(randomCatSexState) userInfo:nil repeats:NO];
+        [self performSelector:@selector(randomCatSexState) withObject:nil afterDelay:3.0];
+   
         catView = [[UIImageView alloc]init];
         [self setCatImage];
         CGRect rect = self.frame;
@@ -33,7 +34,6 @@
     }
     return self;
 }
-//自动改变方向
 
 //设置猫图
 -(void)setCatImage
@@ -63,7 +63,6 @@
 //返回随机方向
 -(DirectionState)randomCatDefaultDirection
 {
-
     switch (arc4random()%4) {
         case 0:
             currentDirectionState = DirectionStateUP;
@@ -86,7 +85,6 @@
 //返回随机性别
 -(void)randomCatSexState
 {
-
     int sexState = arc4random()%2;
     switch (sexState) {
         case 0:
@@ -95,7 +93,6 @@
         case 1:
             catSexState = CatSexStateFemale;
             break;
- 
     }
     [self setCatImage];
 }
@@ -137,6 +134,9 @@
     {
         self.currentDirectionState = DirectionStateRight;
     }
-      [self setCatImage];
+    [self setCatImage];
+    
+
+
 }
 @end

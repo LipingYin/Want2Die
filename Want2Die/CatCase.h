@@ -28,7 +28,6 @@ typedef NS_ENUM(NSInteger, CatSexState)
     UIImageView *catView;
     DirectionState currentDirectionState;
     CatSexState catSexState;
-    NSTimer *changeDirectionTimer;
 }
 @property (nonatomic)DirectionState currentDirectionState;
 @property (nonatomic) CatSexState catSexState;

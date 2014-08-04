@@ -19,21 +19,24 @@
 #define TOP_BAR_HEIGHT (isIOS7?[UIApplication sharedApplication].statusBarFrame.size.height+44.0:44.0)
 #define RGB(A,B,C) [UIColor colorWithRed:A/255.0 green:B/255.0 blue:C/255.0 alpha:1.0]
 
-#define CAT_MOVE_TIMER 0.05 //猫移动
-#define ADD_CAT_TIMER 5.0  //增加猫的间隔
 
 
 
 @interface GameViewController ()
 {
     UIButton * beginButton;
-    NSTimer *timer;
+    NSTimer *moveTimer;
     NSTimer *addCatTimer;
+    NSTimer *gameTimer;
     NSMutableArray *catArray;
     
     int maleCatCount;
     int femaleCatCount;
     int kidCatCount;
+    
+    int grade;//游戏等级
+    float catMoveTime;//猫移动时间
+    int addCatTime;//增加猫的间隔
 }
 @end
 
@@ -47,6 +50,11 @@
         catArray = [[NSMutableArray alloc]init];
         maleCatCount=0;
         femaleCatCount=0;
+        
+        grade = 1;
+        catMoveTime = 0.08;
+        addCatTime = 4;
+        
     }
     return self;
 }
@@ -59,9 +67,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     [self addAd];
     [self launchView];
 }
+
+
+
 //广告条显示
 -(void)addAd
 {
@@ -114,7 +126,6 @@
             kidCatCount++;
         }
     }
-
 }
 
 //一定范围内的随机位置
@@ -132,24 +143,29 @@
     CGPoint catPoint= CGPointMake(catX, catY);
     return catPoint;
 }
+
 //开始按钮点击
 - (void)beginButtonClick{
   
     [self addCat];
     [self addCat];
     [self addCat];
-    
-    static BOOL isPlaying = NO;
+
     beginButton.hidden = YES;
     beginButton.enabled = NO;
-    if (!isPlaying) {
-    
-        timer = [NSTimer scheduledTimerWithTimeInterval:CAT_MOVE_TIMER target:self selector:@selector(catMove) userInfo:nil repeats:YES];
-       addCatTimer = [NSTimer scheduledTimerWithTimeInterval:ADD_CAT_TIMER target:self selector:@selector(addCat) userInfo:nil repeats:YES];
 
-    }
- 
-    isPlaying = !isPlaying;
+    gameTimer =[NSTimer scheduledTimerWithTimeInterval:10.0 target:self selector:@selector(upgrade) userInfo:nil repeats:YES];
+    moveTimer = [NSTimer scheduledTimerWithTimeInterval:catMoveTime target:self selector:@selector(catMove) userInfo:nil repeats:YES];
+    addCatTimer = [NSTimer scheduledTimerWithTimeInterval:addCatTime target:self selector:@selector(addCat) userInfo:nil repeats:YES];
+
+}
+
+//升级
+-(void)upgrade
+{
+    grade = grade++;
+    catMoveTime = 0.1-0.02*grade;
+    addCatTime = 5 - grade;
 }
 
 //  定时器调用
@@ -216,7 +232,6 @@
 //判断是否出边界
 -(void)isBeyondBorder:(CGPoint)point
 {
-
     if(point.x>FUll_VIEW_WIDTH||point.x<0||point.y<(isIOS7?50:70)||point.y>(FUll_VIEW_HEIGHT-50))
     {
         [self failView];
@@ -227,10 +242,13 @@
 // 失败
 -(void)failView
 {
-    DXAlertView *alert = [[DXAlertView alloc] initWithTitle:@"游戏结束" contentText:@"You have bought something" leftButtonTitle:@"Ok" rightButtonTitle:@"重来"];
+    NSString *string = [NSString stringWithFormat:@"恭喜你,闯了%d关",grade];
+    DXAlertView *alert = [[DXAlertView alloc] initWithTitle:@"游戏结束" contentText:string leftButtonTitle:@"炫耀" rightButtonTitle:@"重来"];
     [alert show];
     alert.leftBlock = ^() {
+        
         NSLog(@"left button clicked");
+        
     };
     alert.rightBlock = ^() {
         [catArray removeAllObjects];
@@ -240,25 +258,32 @@
             }
         
         }
+    
         [self beginButtonClick];
-
+        
 
     };
+    
     alert.dismissBlock = ^() {
         NSLog(@"Do something interesting after dismiss block");
     };
 
-
-    if ([timer isValid]) {
-        [timer invalidate];
-        timer = nil;
+    
+    if ([moveTimer isValid]) {
+        [moveTimer invalidate];
+        moveTimer = nil;
     }
     
     if ([addCatTimer isValid]) {
         [addCatTimer invalidate];
         addCatTimer = nil;
     }
-
+    
+    if ([gameTimer isValid]) {
+        [gameTimer invalidate];
+        gameTimer = nil;
+    }
+    
 }
 #pragma youmidelegate
 
