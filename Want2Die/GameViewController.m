@@ -20,8 +20,6 @@
 #define RGB(A,B,C) [UIColor colorWithRed:A/255.0 green:B/255.0 blue:C/255.0 alpha:1.0]
 
 
-
-
 @interface GameViewController ()
 {
     UIButton * beginButton;
@@ -71,8 +69,6 @@
     [self addAd];
     [self launchView];
 }
-
-
 
 //广告条显示
 -(void)addAd
