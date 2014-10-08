@@ -33,5 +33,7 @@ typedef NS_ENUM(NSInteger, CatSexState)
 @property (nonatomic) CatSexState catSexState;
 @property (nonatomic,strong)UIImageView *catView;
 
+-(id)initWithFrame:(CGRect)frame andSex:(CatSexState)sex;
+
 
 @end

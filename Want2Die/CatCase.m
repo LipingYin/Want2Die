@@ -15,7 +15,7 @@
 @synthesize currentDirectionState;
 @synthesize catView;
 
-
+//随机性别
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
@@ -27,11 +27,27 @@
         catView = [[UIImageView alloc]init];
         [self setCatImage];
         CGRect rect = self.frame;
-        catView.frame = CGRectMake(rect.size.width/2-10, rect.size.height/2-10, 20, 20);
+        catView.frame =frame;
         [self addSubview:catView];
         [self addGestureRecognizer];
         
     }
+    return self;
+}
+//特定性别猫
+- (id)initWithFrame:(CGRect)frame andSex:(CatSexState)sex
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        catSexState = sex;
+        catView = [[UIImageView alloc]init];
+        [self setCatImage];
+        catView.frame = CGRectMake(0,0, frame.size.width, frame.size.height);
+        [self addSubview:catView];
+        [self addGestureRecognizer];
+        
+    }
+
     return self;
 }
 

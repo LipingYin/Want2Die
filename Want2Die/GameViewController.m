@@ -66,7 +66,7 @@
 {
     [super viewDidLoad];
     
-    [self addAd];
+ //   [self addAd];
     [self launchView];
 }
 
@@ -80,59 +80,59 @@
     [adView320x50 start];
     
     [self.view addSubview:adView320x50];
-    
-    YouMiView *adView2=[[YouMiView alloc] initWithContentSizeIdentifier:YouMiBannerContentSizeIdentifier320x50 delegate:self];
-    adView2.frame = CGRectMake(0, FUll_VIEW_HEIGHT-50, CGRectGetWidth(adView2.bounds), CGRectGetHeight(adView2.bounds));
-    adView2.backgroundColor = [UIColor colorWithWhite:0.8 alpha:0.5];
-    adView2.tag = 302;
-    [adView2 start];
-    
-    [self.view addSubview:adView2];
-
 }
 //开始
 -(void)launchView
 {
+    self.view.backgroundColor =RGB(234, 134, 48);
+    
     beginButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     beginButton.frame = CGRectMake(20, 20, 100, 40);
     [beginButton setTitle:@"开始" forState:UIControlStateNormal];
     [beginButton addTarget:self action:@selector(beginButtonClick) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:beginButton];
-
+    
+    //初始一家人
+    [self addCatFamliy];
 }
+-(void)addCatFamliy
+{
+
+    CatCase *cat = [[CatCase alloc]initWithFrame:CGRectMake(25,80, 120, 120) andSex:CatSexStateMale];
+    CatCase *cat2 = [[CatCase alloc]initWithFrame:CGRectMake(25+90,80+30, 90, 90) andSex:CatSexStateKid];
+    CatCase *cat3 = [[CatCase alloc]initWithFrame:CGRectMake(25+150,80, 120, 120) andSex:CatSexStateFemale];
+    [self.view addSubview:cat];
+    [catArray addObject:cat];
+    
+    [self.view addSubview:cat2];
+    [catArray addObject:cat2];
+    
+    [self.view addSubview:cat3];
+    [catArray addObject:cat3];
+}
+
+
 -(void)addCat
 {
     //一定范围内的随机位置
     CGPoint catPoint = [self randomCatDefaltLocation];
     //初始猫
-    CatCase *cat = [[CatCase alloc]initWithFrame:CGRectMake(0, 0, 50, 50)];
+    CatCase *cat = [[CatCase alloc]initWithFrame:CGRectMake(0, 0, 45, 45)];
     cat.center = catPoint;
     cat.userInteractionEnabled = YES;
     [self.view addSubview:cat];
     [catArray addObject:cat];
-    cat.tag = 100+catArray.count;
-    for (CatCase *cat in catArray) {
-        if (cat.catSexState ==CatSexStateMale) {
-            maleCatCount++;
-        }else if(cat.catSexState == CatSexStateFemale)
-        {
-            femaleCatCount++;
-        }else if(cat.catSexState == CatSexStateKid)
-        {
-            kidCatCount++;
-        }
-    }
 }
 
 //一定范围内的随机位置
 -(CGPoint)randomCatDefaltLocation
 {
     //m + rand()%(n-m)
-    CGPoint center = self.view.center;
-    int minX = center.x-40;
-    int maxX = center.x+40;
-    int minY = center.y-40;
-    int maxY = center.y+40;
+//    CGPoint center = self.view.center;
+    int minX = 45;
+    int maxX = self.view.frame.size.width-45;
+    int minY = 45;
+    int maxY = self.view.frame.size.height-45;
     int catX = minX + arc4random()%(maxX-minX);
     int catY = minY + arc4random()%(maxY-minY);
     
@@ -143,26 +143,22 @@
 //开始按钮点击
 - (void)beginButtonClick{
   
-    [self addCat];
-    [self addCat];
-    [self addCat];
 
     beginButton.hidden = YES;
     beginButton.enabled = NO;
 
-    gameTimer =[NSTimer scheduledTimerWithTimeInterval:10.0 target:self selector:@selector(upgrade) userInfo:nil repeats:YES];
+    [UIView animateWithDuration:1 animations:^{   //新封面渐显效果
+        for (CatCase *cat in catArray) {
+            CGPoint point = [self randomCatDefaltLocation];
+            cat.frame = CGRectMake(point.x,point.y, 45, 45);
+            cat.catView.frame =   CGRectMake(0,0, 45, 45);
+        }
+    }];
     moveTimer = [NSTimer scheduledTimerWithTimeInterval:catMoveTime target:self selector:@selector(catMove) userInfo:nil repeats:YES];
     addCatTimer = [NSTimer scheduledTimerWithTimeInterval:addCatTime target:self selector:@selector(addCat) userInfo:nil repeats:YES];
 
 }
 
-//升级
--(void)upgrade
-{
-    grade = grade++;
-    catMoveTime = 0.1-0.02*grade;
-    addCatTime = 5 - grade;
-}
 
 //  定时器调用
 -(void)catMove
@@ -228,7 +224,7 @@
 //判断是否出边界
 -(void)isBeyondBorder:(CGPoint)point
 {
-    if(point.x>FUll_VIEW_WIDTH||point.x<0||point.y<(isIOS7?50:70)||point.y>(FUll_VIEW_HEIGHT-50))
+    if(point.x>FUll_VIEW_WIDTH||point.x<0||point.y<0||point.y>FUll_VIEW_HEIGHT)
     {
         [self failView];
         NSLog(@"x:%f  y:%f",point.x,point.y);
