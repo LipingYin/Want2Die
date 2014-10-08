@@ -49,6 +49,24 @@
 		F0A45BC2198A24F700A14569 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A45BC1198A24F700A14569 /* QuartzCore.framework */; };
 		F0A45BC5198A27D100A14569 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A45BC3198A250000A14569 /* libsqlite3.dylib */; };
 		F0A45BC6198A27ED00A14569 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A45BBB198A24D000A14569 /* StoreKit.framework */; };
+		F0FB61A019E4DC30005B7195 /* setting.png in Resources */ = {isa = PBXBuildFile; fileRef = F0FB619C19E4DC30005B7195 /* setting.png */; };
+		F0FB61A119E4DC30005B7195 /* about.png in Resources */ = {isa = PBXBuildFile; fileRef = F0FB619D19E4DC30005B7195 /* about.png */; };
+		F0FB61A219E4DC30005B7195 /* about@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F0FB619E19E4DC30005B7195 /* about@2x.png */; };
+		F0FB61A319E4DC30005B7195 /* setting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F0FB619F19E4DC30005B7195 /* setting@2x.png */; };
+		F0FB61A819E50D8F005B7195 /* closeMusic.png in Resources */ = {isa = PBXBuildFile; fileRef = F0FB61A419E50D8F005B7195 /* closeMusic.png */; };
+		F0FB61A919E50D8F005B7195 /* openMusic.png in Resources */ = {isa = PBXBuildFile; fileRef = F0FB61A519E50D8F005B7195 /* openMusic.png */; };
+		F0FB61AA19E50D8F005B7195 /* closeMusic@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F0FB61A619E50D8F005B7195 /* closeMusic@2x.png */; };
+		F0FB61AB19E50D8F005B7195 /* openMusic@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F0FB61A719E50D8F005B7195 /* openMusic@2x.png */; };
+		F0FB61B219E520C8005B7195 /* grade_difficult.png in Resources */ = {isa = PBXBuildFile; fileRef = F0FB61AC19E520C8005B7195 /* grade_difficult.png */; };
+		F0FB61B319E520C8005B7195 /* grade_difficult@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F0FB61AD19E520C8005B7195 /* grade_difficult@2x.png */; };
+		F0FB61B419E520C8005B7195 /* grade_easy.png in Resources */ = {isa = PBXBuildFile; fileRef = F0FB61AE19E520C8005B7195 /* grade_easy.png */; };
+		F0FB61B519E520C8005B7195 /* grade_easy@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F0FB61AF19E520C8005B7195 /* grade_easy@2x.png */; };
+		F0FB61B619E520C8005B7195 /* grade_medium.png in Resources */ = {isa = PBXBuildFile; fileRef = F0FB61B019E520C8005B7195 /* grade_medium.png */; };
+		F0FB61B719E520C8005B7195 /* grade_medium@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F0FB61B119E520C8005B7195 /* grade_medium@2x.png */; };
+		F0FB61BA19E52563005B7195 /* support.png in Resources */ = {isa = PBXBuildFile; fileRef = F0FB61B819E52563005B7195 /* support.png */; };
+		F0FB61BB19E52563005B7195 /* support@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F0FB61B919E52563005B7195 /* support@2x.png */; };
+		F0FB61BE19E5311F005B7195 /* rankList@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F0FB61BC19E5311F005B7195 /* rankList@2x.png */; };
+		F0FB61BF19E5311F005B7195 /* rankList.png in Resources */ = {isa = PBXBuildFile; fileRef = F0FB61BD19E5311F005B7195 /* rankList.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +139,24 @@
 		F0A45BBF198A24EF00A14569 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		F0A45BC1198A24F700A14569 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		F0A45BC3198A250000A14569 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		F0FB619C19E4DC30005B7195 /* setting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setting.png; sourceTree = "<group>"; };
+		F0FB619D19E4DC30005B7195 /* about.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = about.png; sourceTree = "<group>"; };
+		F0FB619E19E4DC30005B7195 /* about@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "about@2x.png"; sourceTree = "<group>"; };
+		F0FB619F19E4DC30005B7195 /* setting@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "setting@2x.png"; sourceTree = "<group>"; };
+		F0FB61A419E50D8F005B7195 /* closeMusic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = closeMusic.png; sourceTree = "<group>"; };
+		F0FB61A519E50D8F005B7195 /* openMusic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = openMusic.png; sourceTree = "<group>"; };
+		F0FB61A619E50D8F005B7195 /* closeMusic@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "closeMusic@2x.png"; sourceTree = "<group>"; };
+		F0FB61A719E50D8F005B7195 /* openMusic@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "openMusic@2x.png"; sourceTree = "<group>"; };
+		F0FB61AC19E520C8005B7195 /* grade_difficult.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grade_difficult.png; sourceTree = "<group>"; };
+		F0FB61AD19E520C8005B7195 /* grade_difficult@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grade_difficult@2x.png"; sourceTree = "<group>"; };
+		F0FB61AE19E520C8005B7195 /* grade_easy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grade_easy.png; sourceTree = "<group>"; };
+		F0FB61AF19E520C8005B7195 /* grade_easy@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grade_easy@2x.png"; sourceTree = "<group>"; };
+		F0FB61B019E520C8005B7195 /* grade_medium.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grade_medium.png; sourceTree = "<group>"; };
+		F0FB61B119E520C8005B7195 /* grade_medium@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grade_medium@2x.png"; sourceTree = "<group>"; };
+		F0FB61B819E52563005B7195 /* support.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = support.png; sourceTree = "<group>"; };
+		F0FB61B919E52563005B7195 /* support@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "support@2x.png"; sourceTree = "<group>"; };
+		F0FB61BC19E5311F005B7195 /* rankList@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rankList@2x.png"; sourceTree = "<group>"; };
+		F0FB61BD19E5311F005B7195 /* rankList.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rankList.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +193,24 @@
 		5A83FF7E19E01D7300A83854 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				F0FB61BC19E5311F005B7195 /* rankList@2x.png */,
+				F0FB61BD19E5311F005B7195 /* rankList.png */,
+				F0FB61B819E52563005B7195 /* support.png */,
+				F0FB61B919E52563005B7195 /* support@2x.png */,
+				F0FB61AC19E520C8005B7195 /* grade_difficult.png */,
+				F0FB61AD19E520C8005B7195 /* grade_difficult@2x.png */,
+				F0FB61AE19E520C8005B7195 /* grade_easy.png */,
+				F0FB61AF19E520C8005B7195 /* grade_easy@2x.png */,
+				F0FB61B019E520C8005B7195 /* grade_medium.png */,
+				F0FB61B119E520C8005B7195 /* grade_medium@2x.png */,
+				F0FB619C19E4DC30005B7195 /* setting.png */,
+				F0FB61A419E50D8F005B7195 /* closeMusic.png */,
+				F0FB61A519E50D8F005B7195 /* openMusic.png */,
+				F0FB61A619E50D8F005B7195 /* closeMusic@2x.png */,
+				F0FB61A719E50D8F005B7195 /* openMusic@2x.png */,
+				F0FB619D19E4DC30005B7195 /* about.png */,
+				F0FB619E19E4DC30005B7195 /* about@2x.png */,
+				F0FB619F19E4DC30005B7195 /* setting@2x.png */,
 				5A8D6DFB19E02D61000AFCA9 /* Default.png */,
 				5A8D6DFD19E05DC0000AFCA9 /* downCat_Female@2x.png */,
 				5A8D6DFE19E05DC0000AFCA9 /* downCat_Male@2x.png */,
@@ -370,7 +424,9 @@
 				5A83FF8E19E01D7300A83854 /* rightCat_Male.png in Resources */,
 				F0086F0B19889060009E7E18 /* GameViewController.xib in Resources */,
 				5A83FF8D19E01D7300A83854 /* rightCat_Female.png in Resources */,
+				F0FB61B719E520C8005B7195 /* grade_medium@2x.png in Resources */,
 				5A8D6E0B19E05DC0000AFCA9 /* rightCat_Female@2x.png in Resources */,
+				F0FB61B419E520C8005B7195 /* grade_easy.png in Resources */,
 				F042C0EE19877FE900DAE2E8 /* Images.xcassets in Resources */,
 				5A83FF9019E01D7300A83854 /* upCat_Male.png in Resources */,
 				5A8D6E0719E05DC0000AFCA9 /* downCat_Male@2x.png in Resources */,
@@ -378,17 +434,33 @@
 				5A83FF8819E01D7300A83854 /* downCat_Female.png in Resources */,
 				5A8D6E0C19E05DC0000AFCA9 /* rightCat_Male@2x.png in Resources */,
 				5A8D6DFC19E02D61000AFCA9 /* Default.png in Resources */,
+				F0FB61A919E50D8F005B7195 /* openMusic.png in Resources */,
+				F0FB61B219E520C8005B7195 /* grade_difficult.png in Resources */,
 				5A83FF8C19E01D7300A83854 /* leftCat_Male.png in Resources */,
+				F0FB61BE19E5311F005B7195 /* rankList@2x.png in Resources */,
 				5A8D6E0D19E05DC0000AFCA9 /* upCat_Female@2x.png in Resources */,
+				F0FB61B519E520C8005B7195 /* grade_easy@2x.png in Resources */,
+				F0FB61B319E520C8005B7195 /* grade_difficult@2x.png in Resources */,
 				5A8D6E0819E05DC0000AFCA9 /* kidCat@2x.png in Resources */,
 				5A8D6E0619E05DC0000AFCA9 /* downCat_Female@2x.png in Resources */,
+				F0FB61A019E4DC30005B7195 /* setting.png in Resources */,
+				F0FB61A819E50D8F005B7195 /* closeMusic.png in Resources */,
 				5A8D6E0919E05DC0000AFCA9 /* leftCat_Female@2x.png in Resources */,
 				5A8D6E0A19E05DC0000AFCA9 /* leftCat_Male@2x.png in Resources */,
 				F042C0E019877FE900DAE2E8 /* InfoPlist.strings in Resources */,
+				F0FB61B619E520C8005B7195 /* grade_medium.png in Resources */,
+				F0FB61A319E4DC30005B7195 /* setting@2x.png in Resources */,
+				F0FB61AB19E50D8F005B7195 /* openMusic@2x.png in Resources */,
 				5A83FF8A19E01D7300A83854 /* kidCat.png in Resources */,
+				F0FB61BF19E5311F005B7195 /* rankList.png in Resources */,
 				5A8D6E0E19E05DC0000AFCA9 /* upCat_Male@2x.png in Resources */,
+				F0FB61BA19E52563005B7195 /* support.png in Resources */,
+				F0FB61BB19E52563005B7195 /* support@2x.png in Resources */,
+				F0FB61AA19E50D8F005B7195 /* closeMusic@2x.png in Resources */,
 				5A83FF8B19E01D7300A83854 /* leftCat_Female.png in Resources */,
 				5A83FF8F19E01D7300A83854 /* upCat_Female.png in Resources */,
+				F0FB61A219E4DC30005B7195 /* about@2x.png in Resources */,
+				F0FB61A119E4DC30005B7195 /* about.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

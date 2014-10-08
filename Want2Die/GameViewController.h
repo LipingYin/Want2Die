@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "YouMiDelegateProtocol.h"
-@interface GameViewController : UIViewController<YouMiDelegate>
+@interface GameViewController : UIViewController<YouMiDelegate,UIGestureRecognizerDelegate>
 
 @end
